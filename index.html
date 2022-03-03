@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <link rel="stylesheet" href="css/tyyli.css">
+    <meta name="author" content="Tero Rantanen">
+    <title>Muistipeli</title>
+</head>
+
+<body>
+    <main>
+        ​<header>
+            <h1>MUISTIPELI</h1>
+        </header>
+
+        <section class="main">
+            <div class="row">
+                <div class="box play" id="kortti1"></div>
+                <div id="kortti2" class="box play"></div>
+                <div id="kortti3" class="box play"></div>
+                <div id="kortti4" class="box play"></div>
+                <div id="kortti5" class="box play"></div>
+                <div id="kortti6" class="box play"></div>
+                <div id="kortti7" class="box play"></div>
+                <div id="kortti8" class="box play"></div>
+                <div id="kortti9" class="box play"></div>
+                <div id="kortti10" class="box play"></div>
+                <div id="kortti11" class="box play"></div>
+                <div id="kortti12" class="box play"></div>
+                <div id="kortti13" class="box play"></div>
+                <div id="kortti14" class="box play"></div>
+                <div id="kortti15" class="box play"></div>
+                <div id="kortti16" class="box play"></div>
+                <div id="kortti17" class="box play"></div>
+                <div id="kortti18" class="box play"></div>
+                <div id="kortti19" class="box play"></div>
+                <div id="kortti20" class="box play"></div>
+            </div>
+
+            <div id="state">
+                <span id="aika">0</span>
+                <span id="pisteet">0</span>
+            </div>
+        </section>
+
+        <section id="pre" class="">
+            <div id="themes">
+                <h2>Valise haluamasi teema</h2>
+                <p id="kissat" class="themes" title="Kissat">Kissat</p>
+                <p id="pokemon" class="themes" title="Pokemon">Pokemon</p>
+                <p id="koirat" class="themes" title="Koirat">Koirat</p>
+                <p id="kortit" class="themes" title="Kortit">Pelikortit</p>
+            </div>
+        </section>
+
+        <section id="post" class="hidden">
+            <div>
+                <h2>ONNEA!</h2>
+                <p id="final"></p>
+                <br>
+                <p>
+                    <a id="again">Pelaa uudestaan!</a>
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="js/script.js"></script>
+
+</html>
