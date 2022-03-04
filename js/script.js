@@ -111,9 +111,7 @@ var postElt = document.querySelector("#post");
 var finalElt = document.querySelector("#final");
 var againElt = document.querySelector("#again");
 
-
-
-// kertoo minkä teeman käyttäjä valitsi
+//tarkistaa minkä teeman käyttäjä valitsi
 teematElt.addEventListener("click", function(e) {
   if (e.target.classList.contains("themes")) {
     activateTheme(e.target.id);
@@ -133,83 +131,81 @@ function activateTheme(theme) {
   }
 }
 
-  //pelin käsittely
-  mainElt.addEventListener("click", gameLogic);
+//pelin käsittely
+mainElt.addEventListener("click", gameLogic);
 
-  function gameLogic(e) {
-    //varmista boksin käsittely
-    if (e.target.classList.contains("play")) {
-      e.target.firstChild.classList.remove("hidden");
-      //lasketaan ekat kaksi klikkiä
-      if (click < 1) {
-        tempElt1 = e.target;
-        //ajastin
-        if (click === -1) {
-          timer = setInterval(function() {
-            aika++;
-            aikaElt.innerHTML = aika;
-          }, 1000);
-        }
-        click = 1;
+function gameLogic(e) {
+  //varmista boksin käsittely
+  if (e.target.classList.contains("play")) {
+    e.target.firstChild.classList.remove("hidden");
+    //lasketaan ekat kaksi klikkiä
+    if (click < 1) {
+      tempElt1 = e.target;
+      //ajastin
+      if (click === -1) {
+        timer = setInterval(function() {
+          aika++;
+          aikaElt.innerHTML = aika;
+        }, 1000);
       }
-
-      //toinen klikkaus
-      else if (e.target !== tempElt1) {
-        tempElt2 = e.target;
-        //ei paria
-        if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
-          console.log(tempElt1.firstChild.id)
-          mainElt.removeEventListener("click", gameLogic);
-          setTimeout( function() {
-            tempElt1.firstChild.classList.add("hidden");
-            tempElt2.firstChild.classList.add("hidden");
-            mainElt.addEventListener("click", gameLogic);
-          }, 400);
-          if (pisteet > 0) {
-            pisteet -= 2;
-          }
-          pisteetElt.innerHTML = pisteet;
+      click = 1;
+    }
+    //toinen klikkaus
+    else if (e.target !== tempElt1) {
+      tempElt2 = e.target;
+      //ei paria
+      if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
+        console.log(tempElt1.firstChild.id)
+        mainElt.removeEventListener("click", gameLogic);
+        setTimeout( function() {
+          tempElt1.firstChild.classList.add("hidden");
+          tempElt2.firstChild.classList.add("hidden");
+          mainElt.addEventListener("click", gameLogic);
+        }, 400);
+        if (pisteet > 0) {
+          pisteet -= 2;
         }
-
-        //pari
-        else {
-          pisteet += 10;
-          voitot += 2;
-          tempElt1.firstChild.classList.add("outlined");
-          tempElt2.firstChild.classList.add("outlined");
-          tempElt1.classList.remove("play");
-          tempElt2.classList.remove("play");
-          pisteetElt.innerHTML = pisteet;
-
-          //voitettu peli
-          if (voitot === 20) {
-            clearInterval(timer);
-            finalElt.innerHTML = "Sait " + pisteet + " pistettä <br> " + aika + "ssa sekunnissa";
-            postElt.classList.remove("hidden");
-          }
-        }
-        click = 0;
+        pisteetElt.innerHTML = pisteet;
       }
+      //pari
+      else {
+        pisteet += 10;
+        voitot += 2;
+        tempElt1.firstChild.classList.add("outlined");
+        tempElt2.firstChild.classList.add("outlined");
+        tempElt1.classList.remove("play");
+        tempElt2.classList.remove("play");
+        pisteetElt.innerHTML = pisteet;
+
+        //voitettu peli
+        if (voitot === 20) {
+          clearInterval(timer);
+          finalElt.innerHTML = "Sait " + pisteet + " pistettä <br> " + aika + "ssa sekunnissa";
+          postElt.classList.remove("hidden");
+        }
+      }
+      click = 0;
     }
   }
+}
 
-  againElt.addEventListener("click", resetGame);
+againElt.addEventListener("click", resetGame);
 
-  function resetGame() {
-    // aloittaa pelin alusta
-    tempElt1 = "";
-    tempElt2 = "";
-    click = -1;
-    voitot = 0;
-    pisteet = 0;
-    aika = 0;
-    postElt.classList.add("hidden");
-    preElt.classList.remove("hidden");
-    for (let i = 0; i < 20; i++) {
-      boxElts[i].classList.add("play");
-      boxElts[i].firstChild.classList.add("hidden");
-    }
-    aikaElt.textContent = aika;
-    pisteetElt.textContent = pisteet;
+function resetGame() {
+  // aloittaa pelin alusta
+  tempElt1 = "";
+  tempElt2 = "";
+  click = -1;
+  voitot = 0;
+  pisteet = 0;
+  aika = 0;
+  postElt.classList.add("hidden");
+  preElt.classList.remove("hidden");
+  for (let i = 0; i < 20; i++) {
+    boxElts[i].classList.add("play");
+    boxElts[i].firstChild.classList.add("hidden");
   }
+  aikaElt.textContent = aika;
+  pisteetElt.textContent = pisteet;
+}
 
