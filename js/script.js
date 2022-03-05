@@ -91,6 +91,28 @@ var library = {
       ]
 }
 
+//asetetaan kaikkien korttien taustakuvaksi sama tausta
+$("#tausta").html('<img src="img/tausta.jpg">');
+$("#tausta2").html('<img src="img/tausta.jpg">');
+$("#tausta3").html('<img src="img/tausta.jpg">');
+$("#tausta4").html('<img src="img/tausta.jpg">');
+$("#tausta5").html('<img src="img/tausta.jpg">');
+$("#tausta6").html('<img src="img/tausta.jpg">');
+$("#tausta7").html('<img src="img/tausta.jpg">');
+$("#tausta8").html('<img src="img/tausta.jpg">');
+$("#tausta9").html('<img src="img/tausta.jpg">');
+$("#tausta10").html('<img src="img/tausta.jpg">');
+$("#tausta11").html('<img src="img/tausta.jpg">');
+$("#tausta12").html('<img src="img/tausta.jpg">');
+$("#tausta13").html('<img src="img/tausta.jpg">');
+$("#tausta14").html('<img src="img/tausta.jpg">');
+$("#tausta15").html('<img src="img/tausta.jpg">');
+$("#tausta16").html('<img src="img/tausta.jpg">');
+$("#tausta17").html('<img src="img/tausta.jpg">');
+$("#tausta18").html('<img src="img/tausta.jpg">');
+$("#tausta19").html('<img src="img/tausta.jpg">');
+$("#tausta20").html('<img src="img/tausta.jpg">');
+
 //muuttujat palapelille
 var kuvat = [];
 var tempElt1 = "";
@@ -103,7 +125,7 @@ var aika = 0;
 //muuttujat laskureille, pisteille, jne
 var preElt = document.querySelector("#pre");
 var teematElt = document.querySelector("#themes");
-var boxElts = document.getElementsByClassName("box");
+var boxElts = document.getElementsByClassName("back");
 var mainElt = document.querySelector(".main");
 var aikaElt = document.querySelector("#aika");
 var pisteetElt = document.querySelector("#pisteet");
