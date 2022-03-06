@@ -123,15 +123,15 @@ var pisteet = 0;
 var aika = 0;
 
 //muuttujat laskureille, pisteille, jne
-var preElt = document.querySelector("#pre");
-var teematElt = document.querySelector("#themes");
-var boxElts = document.getElementsByClassName("back");
-var mainElt = document.querySelector(".main");
-var aikaElt = document.querySelector("#aika");
-var pisteetElt = document.querySelector("#pisteet");
-var postElt = document.querySelector("#post");
-var finalElt = document.querySelector("#final");
-var againElt = document.querySelector("#again");
+var preElt = document.querySelector("#pre"); //valikko teemoille, niiden "ikkuna"
+var teematElt = document.querySelector("#themes"); //teemat edellisessä ikkunassa
+var boxElts = document.getElementsByClassName("back"); //korttien taustaut, eli pelattavat kuvat
+var mainElt = document.querySelector(".main"); //korttien pohja, "pöytä"
+var aikaElt = document.querySelector("#aika"); //aika-ikkuna
+var pisteetElt = document.querySelector("#pisteet"); //pisteet-ikkunan
+var postElt = document.querySelector("#post"); //onnittelut ja pisteet-ikkuna
+var finalElt = document.querySelector("#final"); //edellisen ikkunan tulokset-osio
+var againElt = document.querySelector("#again"); //uudelleenpeluu-nappi
 
 //tarkistaa minkä teeman käyttäjä valitsi
 teematElt.addEventListener("click", function(e) {
