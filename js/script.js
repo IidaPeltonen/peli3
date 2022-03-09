@@ -158,11 +158,11 @@ mainElt.addEventListener("click", gameLogic);
 
 function gameLogic(e) {
   //varmista boksin käsittely
-  if (e.target.classList.contains("play")) {
-    e.target.firstChild.classList.remove("hidden");
+  if (e.target.classList.contains("play")) { //eli tää antaa pelata kortin, jos sen class on play
+    e.target.firstChild.classList.remove("hidden"); // tää poistaa siitä hiddenin, mutta tän pitäisi koskea div class backiä
     //lasketaan ekat kaksi klikkiä
     if (click < 1) {
-      tempElt1 = e.target;
+      tempElt1 = e.target; // tähän pitäisi taas saada sen div class backin kuvan tiedot
       //ajastin
       if (click === -1) {
         timer = setInterval(function() {
